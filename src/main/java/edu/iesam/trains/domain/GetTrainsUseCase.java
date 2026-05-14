@@ -10,7 +10,7 @@ public class GetTrainsUseCase {
         this.trainRepository = trainRepository;
     }
 
-    public ArrayList<Train> trains() {
+    public ArrayList<Train> getAll() {
         return trainRepository.getAll();
     }
 }
