@@ -11,9 +11,8 @@ import java.util.ArrayList;
 
 public class TrainView {
 
-    public static void addTrain() {
+    public static void addTrain(Train train) {
         AddTrainUseCase addTrainUseCase = new AddTrainUseCase(new TrainDataRepository(TrainMemLocalDataSource.newInstance()));
-        Train train = new Train("1", "100", "100/km", "Ávila");
         addTrainUseCase.add(train);
     }
 
@@ -27,5 +26,21 @@ public class TrainView {
 
         ArrayList<Train> trains = getTrainsUseCase.trains();
         System.out.println("Listado de trenes:" + trains);
+    }
+
+    public static void function1() {
+        TrainView.printTrains();
+        TrainView.addTrain(new Train("1", "100", "100/km", "Ávila"));
+        TrainView.printTrains();
+    }
+
+    public static void function2() {
+        TrainView.printTrains();
+    }
+
+    public static void function3() {
+        TrainView.printTrains();
+        TrainView.deleteTrain("1");
+        TrainView.printTrains();
     }
 }
