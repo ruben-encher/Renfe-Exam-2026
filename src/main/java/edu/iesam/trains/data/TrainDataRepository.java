@@ -3,6 +3,8 @@ package edu.iesam.trains.data;
 import edu.iesam.trains.domain.Train;
 import edu.iesam.trains.domain.TrainRepository;
 
+import java.util.ArrayList;
+
 public class TrainDataRepository implements TrainRepository {
 
     TrainMemLocalDataSource trainMemLocalDataSource;
@@ -19,5 +21,10 @@ public class TrainDataRepository implements TrainRepository {
     @Override
     public void delete(String id) {
         trainMemLocalDataSource.delete(id);
+    }
+
+    @Override
+    public ArrayList<Train> getAll() {
+        return trainMemLocalDataSource.findAll();
     }
 }
