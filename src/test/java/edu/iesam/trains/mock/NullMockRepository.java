@@ -1,5 +1,24 @@
 package edu.iesam.trains.mock;
 
-public class NullMockRepository {
+import edu.iesam.trains.domain.Train;
+import edu.iesam.trains.domain.TrainRepository;
 
+import java.util.ArrayList;
+
+public class NullMockRepository implements TrainRepository {
+
+    @Override
+    public void add(Train train) {
+
+    }
+
+    @Override
+    public void delete(String id) {
+
+    }
+
+    @Override
+    public ArrayList<Train> getAll() {
+        return null;
+    }
 }
