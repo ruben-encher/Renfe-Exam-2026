@@ -24,7 +24,7 @@ public class TrainView {
     public static void printTrains() {
         GetTrainsUseCase getTrainsUseCase = new GetTrainsUseCase(new TrainDataRepository(TrainMemLocalDataSource.newInstance()));
 
-        ArrayList<Train> trains = getTrainsUseCase.trains();
+        ArrayList<Train> trains = getTrainsUseCase.getAll();
         System.out.println("Listado de trenes:" + trains);
     }
 
